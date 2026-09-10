@@ -1,6 +1,6 @@
 # DM Toolkit
 
-Version 3.2
+Version 3.2 
 
 Control, metrology and wavefront-sensorless correction for low-cost
 piezoelectric deformable mirrors. The code drives a mirror from a Raspberry
