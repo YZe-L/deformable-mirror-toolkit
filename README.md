@@ -19,7 +19,7 @@ Python 3.11 on Windows is the tested setup.
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
-pip install -e .[search,speed,hardware,test]
+pip install -e .[search,speed,hardware,test] 
 ```
 
 Or `pip install -r requirements.txt`. The Thorlabs camera SDK and the Zygo
