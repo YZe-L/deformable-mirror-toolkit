@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "device_id": "dm_5_ch6",
+  "display_name": "DM5 mirror channel 6 piezo",
+  "status": "provisional_continuous_four_loop_fit",
+  "description": "DM5 channel 6 modified PI profile fitted from one continuous four-loop displacement_nm scan.",
+  "hardware": {
+    "driver": "ServoPi PCA9685",
+    "i2c_address": 64,
+    "pwm_frequency_hz": 1526,
+    "default_channel": 6,
+    "minimum_bit": 0,
+    "maximum_bit": 4095,
+    "default_settle_seconds": 8.0,
+    "channel_verified": true
+  },
+  "model": {
+    "type": "modified_prandtl_ishlinskii",
+    "input_quantity": "effective_voltage_above_driver_minimum",
+    "input_unit": "V",
+    "output_quantity": "relative_displacement",
+    "output_unit": "nm",
+    "voltage_origin_v": 1.0568499999999972,
+    "effective_input_min_v": 0.0,
+    "effective_input_max_v": 149.14314979347586,
+    "primary_response": {
+      "type": "chebyshev",
+      "domain_v": [
+        0.0,
+        149.14314979347586
+      ],
+      "chebyshev_coefficients": [
+        0.0,
+        1920.170879589496,
+        -205.17579680234437,
+        2.6934571954084947,
+        28.938206599530677,
+        -10.33619790982376,
+        8.150678042745406,
+        -1.5426958989870478
+      ],
+      "raw_zero_nm": -2079.072355136162,
+      "output_scale": 1.0
+    },
+    "play_operators": [
+      {
+        "threshold_v": 2.982862995869517,
+        "weight_nm_per_v": 4.127187711644785
+      },
+      {
+        "threshold_v": 6.496492419472001,
+        "weight_nm_per_v": 1.825676083398052
+      },
+      {
+        "threshold_v": 14.148961522771652,
+        "weight_nm_per_v": 3.2368503571217233
+      },
+      {
+        "threshold_v": 30.81556927132429,
+        "weight_nm_per_v": 1.8775316412476286
+      },
+      {
+        "threshold_v": 67.11441740706414,
+        "weight_nm_per_v": 0.9226475888342266
+      }
+    ]
+  },
+  "linearized_command": {
+    "type": "linear_nominal_bit_to_displacement",
+    "minimum_nominal_bit": 0,
+    "maximum_nominal_bit": 4095,
+    "minimum_target_displacement_nm": 0.0,
+    "maximum_target_displacement_nm": 3821.9708859521875,
+    "definition": "A nominal bit maps linearly onto displacement; the compensator inverts the model to reach it."
+  },
+  "limits": {
+    "minimum_command_voltage_v": 1.0568499999999972,
+    "maximum_command_voltage_v": 150.19999979347585,
+    "minimum_relative_displacement_nm": 0.0,
+    "maximum_calibrated_displacement_nm": 3821.9708859521875,
+    "reference_definition": "Displacement is zeroed when the home command applies the minimum bit."
+  },
+  "calibration": {
+    "date": "2026-08-07",
+    "method": "Degree-7 Chebyshev loading curve plus 5 non-negative play operators, fitted by linear least squares over the measured drive order.",
+    "driver_voltage_model": "shared ServoPi fit (driver_voltage_lut)",
+    "data_files": [
+      "src/camera/output/mirror_control/DM_5 4 loop/DM_5 ch6 4 loop.csv"
+    ],
+    "displacement_source": [
+      "displacement_nm"
+    ],
+    "displacement_reference": "Each measurement run is zeroed at its first usable row.",
+    "training_points": 203,
+    "training_mae_nm": 25.536227479730595,
+    "training_rmse_nm": 30.56425197805138,
+    "training_max_abs_error_nm": 67.30646500726925,
+    "training_bias_nm": 0.7249492371553781,
+    "training_loop_rmse_nm": {
+      "1_peak_4095": 33.00931944155499,
+      "2_peak_3000": 35.658430899079754,
+      "3_peak_2000": 18.51178509441783,
+      "4_peak_1000": 21.44795099374334
+    },
+    "observed_displacement_range_nm": [
+      0.0,
+      3819.673075
+    ],
+    "loop_peak_bits": [
+      4095,
+      3000,
+      2000,
+      1000
+    ],
+    "sample_interval_median_s": 6.0,
+    "sample_interval_range_s": [
+      6.0,
+      7.0
+    ],
+    "return_to_zero_residual_nm": [
+      154.742746,
+      175.48426,
+      171.814467,
+      174.912968
+    ],
+    "modeled_return_to_zero_residual_nm": 189.7495592427754,
+    "modeled_return_to_zero_residual_nm_by_loop": [
+      189.7495592427754,
+      189.7495592427754,
+      189.7495592427754,
+      189.7495592427754
+    ],
+    "validation_status": "continuous_four_loop_fit_not_yet_hardware_compensation_validated",
+    "known_limitations": [
+      "Only one continuous acquisition sequence is available, so day-to-day repeatability and rate dependence are not identified.",
+      "The model is fitted to displacement_nm; mx_input_value is retained in the CSV but is not used by this fit.",
+      "The source Mx result is Analysis/Surface/PV, so the calibration represents the recorded PV-derived displacement rather than a fixed local ROI height.",
+      "Non-zero bit-0 return values show retained hysteresis or baseline drift, so the lowest displacement targets are the least certain.",
+      "The linearized inverse has passed software validation and still requires a compensated hardware scan."
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "device_id": "piezo_a",
+  "display_name": "Piezo A single-piezo piston mirror",
+  "status": "provisional_major_loop_fit",
+  "description": "Single piezo mirror with piston-only displacement. Temporary modified PI profile fitted from three independent major loops.",
+  "hardware": {
+    "driver": "ServoPi PCA9685",
+    "i2c_address": 64,
+    "pwm_frequency_hz": 1526,
+    "default_channel": 1,
+    "minimum_bit": 0,
+    "maximum_bit": 4090,
+    "default_settle_seconds": 10.0
+  },
+  "model": {
+    "type": "modified_prandtl_ishlinskii",
+    "input_quantity": "effective_voltage_above_driver_minimum",
+    "input_unit": "V",
+    "output_quantity": "relative_mirror_displacement",
+    "output_unit": "nm",
+    "voltage_origin_v": 1.05685,
+    "effective_input_min_v": 0.0,
+    "effective_input_max_v": 149.14315,
+    "primary_response": {
+      "type": "chebyshev",
+      "domain_v": [0.0, 148.8747],
+      "chebyshev_coefficients": [
+        1350.8980613052347,
+        1288.4393097347131,
+        -119.45410929347678,
+        -25.14387738266512,
+        25.008935943482047,
+        -8.065189941781803,
+        -0.9112793410529835,
+        2.092317319670118,
+        1.4013400584361215,
+        -0.27715121520987807
+      ],
+      "raw_zero_nm": -0.10245984210337156,
+      "output_scale": 0.9990888089587154
+    },
+    "play_operators": [
+      {
+        "threshold_v": 13.534063636363639,
+        "weight_nm_per_v": 1.9800472903399806
+      },
+      {
+        "threshold_v": 27.068127272727278,
+        "weight_nm_per_v": 2.5244323492172103
+      },
+      {
+        "threshold_v": 54.136254545454555,
+        "weight_nm_per_v": 0.7698857095859372
+      }
+    ]
+  },
+  "limits": {
+    "minimum_command_voltage_v": 1.05685,
+    "maximum_command_voltage_v": 150.2,
+    "minimum_relative_displacement_nm": 0.0,
+    "maximum_calibrated_displacement_nm": 2511.8,
+    "reference_definition": "Relative displacement is zeroed when the session home command applies bit 0 and resets model memory."
+  },
+  "calibration": {
+    "date": "2026-06-12",
+    "method": "Degree-9 Chebyshev primary loading curve plus non-negative play-operator residual fit.",
+    "data_files": [
+      "src/interferometer/data/piezo_A/DM_A_hysteresis_0-1000/hysteresis_live_20260612_162829_DM1 step 50_1000.csv",
+      "src/interferometer/data/piezo_A/DM_A_hysteresis_0-2000/hysteresis_live_20260612_162007 DM1 step 50_2000.csv",
+      "src/interferometer/data/piezo_A/DM_A_hysteresis_0-4095/hysteresis_live_20260612_155256_DM_1_4096.csv"
+    ],
+    "training_points": 205,
+    "training_rmse_nm": 24.467606653959184,
+    "training_max_abs_error_nm": 77.63301755237056,
+    "up_branch_typical_rmse_nm": 7.0,
+    "validation_status": "not_validated_on_continuous_nested_minor_loops",
+    "known_limitations": [
+      "The three source loops were measured independently and do not share a verified initial memory state.",
+      "No nested reversal sequence was available, so arbitrary-history behavior is only a PI extrapolation.",
+      "Step timing varied, so creep and rate effects are mixed into the fit.",
+      "Return-to-zero residual is under-modelled by approximately 40 to 78 nm depending on loop amplitude."
+    ]
+  }
+}

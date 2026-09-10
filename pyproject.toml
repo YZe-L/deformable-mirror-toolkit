@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dm_toolkit"
+version = "3.2"
+description = "Control, metrology and sensorless correction for low-cost piezo deformable mirrors"
+readme = "README.md"
+license = {text = "GPL-3.0-or-later"}
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+    "opencv-python-headless",
+    "scikit-image",
+    "pyfftw",
+    "h5py",
+    "pandas",
+    "matplotlib",
+    "prysm",
+    "PyQt5",
+]
+
+[project.optional-dependencies]
+search = ["cma", "scikit-optimize"]
+speed = ["bottleneck", "torch"]
+hardware = ["hidapi", "psutil", "pynvml"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dm_toolkit = ["**/*.json", "**/*.npz", "**/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

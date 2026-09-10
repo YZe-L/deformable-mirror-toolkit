@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+venv/
+.env
+
+# Editors
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Desktop.ini
+
+# Measurement output written by the tools (frames, CSV logs, figures)
+output/
+
+# Proprietary vendor code that must not be redistributed:
+# Thorlabs camera DLLs and the Zygo Mx scripting package.
+vendor/
+
+# Local files
+*.log
+*.h5

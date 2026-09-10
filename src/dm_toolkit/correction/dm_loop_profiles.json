@@ -1,0 +1,231 @@
+{
+  "adaptive_channels": {
+    "5": {
+      "1": "src/dm_toolkit/adaptive_settling/descriptors/dm5/adaptive_settling_ch1.json",
+      "2": "src/dm_toolkit/adaptive_settling/descriptors/dm5/adaptive_settling_ch2.json",
+      "3": "src/dm_toolkit/adaptive_settling/descriptors/dm5/adaptive_settling_ch3.json",
+      "4": "src/dm_toolkit/adaptive_settling/descriptors/dm5/adaptive_settling_ch4.json",
+      "5": "src/dm_toolkit/adaptive_settling/descriptors/dm5/adaptive_settling_ch5.json"
+    },
+    "9": {
+      "10": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch10.json",
+      "11": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch11.json",
+      "12": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch12.json",
+      "13": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch13.json",
+      "14": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch14.json",
+      "6": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch6.json",
+      "7": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch7.json",
+      "8": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch8.json",
+      "9": "src/dm_toolkit/adaptive_settling/descriptors/dm9/adaptive_settling_ch9.json"
+    }
+  },
+  "channels": {
+    "5": {
+      "1": "src/dm_toolkit/hysteresis/devices/DM5/dm_5_ch1.json",
+      "2": "src/dm_toolkit/hysteresis/devices/DM5/dm_5_ch2.json",
+      "3": "src/dm_toolkit/hysteresis/devices/DM5/dm_5_ch4.json",
+      "4": "src/dm_toolkit/hysteresis/devices/DM5/dm_5_ch6.json",
+      "5": "src/dm_toolkit/hysteresis/devices/DM5/dm_5_ch8.json"
+    },
+    "9": {
+      "10": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch5_b2000.json",
+      "11": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch6_b2000.json",
+      "12": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch7_b2000.json",
+      "13": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch8_b2000.json",
+      "14": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch9_b2000.json",
+      "6": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch1_b2000.json",
+      "7": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch2_b2000.json",
+      "8": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch3_b2000.json",
+      "9": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch4_b2000.json"
+    }
+  },
+  "enabled": true,
+  "enabled_by_layout": {
+    "5": true,
+    "9": true
+  },
+  "impact_matrices": {
+    "5": "src/dm_toolkit/influence/matrices/DM5_im3_ch1-5.npz",
+    "9": "src/dm_toolkit/influence/matrices/unnamed_9ch_20260823_000656.npz"
+  },
+  "layout": 5,
+  "layouts": {
+    "5": [
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 1,
+        "start": 2000
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 2,
+        "start": 2000
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 3,
+        "start": 2000
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 4,
+        "start": 2000
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 5,
+        "start": 2000
+      }
+    ],
+    "9": [
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 6,
+        "start": 1911
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 7,
+        "start": 2394
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 8,
+        "start": 1510
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 9,
+        "start": 1469
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 10,
+        "start": 1899
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 11,
+        "start": 1672
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 12,
+        "start": 1543
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 13,
+        "start": 776
+      },
+      {
+        "bit_max": 4095,
+        "bit_min": 0,
+        "channel": 14,
+        "start": 0
+      }
+    ]
+  },
+  "speed_profiles": {
+    "5": {
+      "noise": {
+        "1": 0.0005402832180712294,
+        "12": 0.0002761941054500929,
+        "16": 0.00032748597097840377,
+        "2": 0.0003889731668647487,
+        "20": 0.00037893507179433974,
+        "24": 0.00042912242755622023,
+        "32": 0.0005226805589326584,
+        "4": 0.0002749390190251879,
+        "8": 0.0002423045900831798
+      },
+      "noise_sem": {
+        "1": 6.314456477005966e-06,
+        "12": 1.4380527586756171e-05,
+        "16": 2.282580060770641e-05,
+        "2": 3.672384803485942e-06,
+        "20": 2.9071476588990122e-05,
+        "24": 3.3376730553134345e-05,
+        "32": 3.736098172690598e-05,
+        "4": 2.954288982547047e-06,
+        "8": 4.650625868796029e-06
+      },
+      "sessions": 4,
+      "source": "sweep frame (15 round) dm5; sweep frame (20 round) dm5; sweep settle time (15 round) dm5; sweep settle time (20 round) dm5",
+      "step": {
+        "1045": 1.0,
+        "114": 0.81548,
+        "169": 0.933534,
+        "225": 0.971824,
+        "319": 0.98932,
+        "414": 0.992621,
+        "577": 0.994262,
+        "730": 0.99592,
+        "832": 0.996282
+      }
+    },
+    "9": {
+      "noise": {
+        "1": 0.0009769178533629093,
+        "12": 0.0003207296708053793,
+        "16": 0.0003111325814644647,
+        "2": 0.0007018539846205384,
+        "20": 0.00031413601157012877,
+        "24": 0.00032525774926549624,
+        "32": 0.00034931525497123965,
+        "4": 0.0004924887428539996,
+        "8": 0.00035497615839437694
+      },
+      "noise_sem": {
+        "1": 2.7982926343110872e-05,
+        "12": 1.4871086309204823e-05,
+        "16": 1.4174784286607658e-05,
+        "2": 2.6317568057168984e-05,
+        "20": 1.587029780688733e-05,
+        "24": 2.069589687380522e-05,
+        "32": 3.3835414358207614e-05,
+        "4": 3.0371293445910096e-05,
+        "8": 2.0073059980768503e-05
+      },
+      "sessions": 4,
+      "source": "sweep frames (15 round) dm9; sweep frames (20 round) dm9; sweep settle time (15 round) dm9; sweep settle time (20 round) dm9",
+      "step": {
+        "1048": 1.0,
+        "111": 0.314623,
+        "168": 0.690919,
+        "225": 0.849546,
+        "312": 0.938768,
+        "406": 0.971169,
+        "571": 0.989281,
+        "727": 0.994061,
+        "828": 0.99563
+      }
+    }
+  },
+  "tuned_starts": {
+    "9": {
+      "10": 1800,
+      "11": 850,
+      "12": 1950,
+      "13": 700,
+      "14": 150,
+      "6": 1900,
+      "7": 2450,
+      "8": 3850,
+      "9": 3200
+    }
+  }
+}

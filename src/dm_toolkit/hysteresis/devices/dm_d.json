@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "device_id": "dm_d",
+  "display_name": "DM D centre-surface displacement at F#10",
+  "status": "provisional_continuous_seven_loop_fit",
+  "description": "DM D modified PI profile fitted from one continuous seven-loop scan with peak-bit order 1000, 2000, 3000, 4095, 3000, 2000, 1000.",
+  "hardware": {
+    "driver": "ServoPi PCA9685",
+    "i2c_address": 64,
+    "pwm_frequency_hz": 1526,
+    "default_channel": 1,
+    "channel_verified": true,
+    "minimum_bit": 0,
+    "maximum_bit": 4095,
+    "default_settle_seconds": 7.0
+  },
+  "driver_voltage_model": {
+    "type": "chebyshev",
+    "minimum_bit": 0,
+    "maximum_bit": 4095,
+    "minimum_voltage_v": 1.055875,
+    "maximum_voltage_v": 149.79,
+    "chebyshev_coefficients": [
+      81.35663259130038,
+      75.27292998004982,
+      -6.029779210450007,
+      -0.41298037515221964,
+      -0.052850793538466015,
+      -0.17882847607233737,
+      0.053698041725081004,
+      -0.13106960258865794,
+      0.049271599607837786,
+      -0.10051226983382867,
+      0.020062933721007675,
+      -0.06225139667301901
+    ],
+    "raw_zero_v": 1.009747302636086,
+    "output_scale": 0.9997281073109173,
+    "training_rmse_v": 0.05202377018466834,
+    "training_max_abs_error_v": 0.16264330697114193
+  },
+  "model": {
+    "type": "modified_prandtl_ishlinskii",
+    "input_quantity": "effective_voltage_above_device_driver_minimum",
+    "input_unit": "V",
+    "output_quantity": "relative_centre_surface_displacement_at_f_number_10",
+    "output_unit": "nm",
+    "voltage_origin_v": 1.055875,
+    "effective_input_min_v": 0.0,
+    "effective_input_max_v": 148.734125,
+    "primary_response": {
+      "type": "chebyshev",
+      "domain_v": [0.0, 148.734125],
+      "chebyshev_coefficients": [
+        0.0,
+        221.94942597693694,
+        -25.280112620346305,
+        0.18917952273917174,
+        3.6779455767950533,
+        -1.7238613656344055,
+        1.1120894300739137,
+        -0.4075441587844473
+      ],
+      "raw_zero_nm": -240.4972775887346,
+      "output_scale": 1.0
+    },
+    "play_operators": [
+      {
+        "threshold_v": 1.5226014631983598,
+        "weight_nm_per_v": 0.9685679496175384
+      },
+      {
+        "threshold_v": 8.084921969474776,
+        "weight_nm_per_v": 0.28480566396035584
+      },
+      {
+        "threshold_v": 15.683218082781142,
+        "weight_nm_per_v": 0.3799312344935856
+      },
+      {
+        "threshold_v": 29.78817576931363,
+        "weight_nm_per_v": 0.15174494916391962
+      },
+      {
+        "threshold_v": 46.25284185689228,
+        "weight_nm_per_v": 0.03825334803278218
+      }
+    ]
+  },
+  "linearized_command": {
+    "type": "linear_nominal_bit_to_displacement",
+    "minimum_nominal_bit": 0,
+    "maximum_nominal_bit": 4095,
+    "minimum_target_displacement_nm": 0.0,
+    "maximum_target_displacement_nm": 440.0144,
+    "validation_status": "software_dry_run_only_not_yet_remeasured_on_hardware",
+    "definition": "The external nominal bit is a linear displacement coordinate. The inverse PI model converts this target displacement into a history-dependent applied hardware bit."
+  },
+  "limits": {
+    "minimum_command_voltage_v": 1.055875,
+    "maximum_command_voltage_v": 149.79,
+    "minimum_relative_displacement_nm": 0.0,
+    "maximum_calibrated_displacement_nm": 440.0144,
+    "reference_definition": "Relative centre displacement is zeroed only at the first bit-0 point; model state remains continuous through all seven loops."
+  },
+  "calibration": {
+    "date": "2026-07-22",
+    "method": "Degree-7 Chebyshev primary response plus five non-negative play operators with a monotonic-inverse constraint; state resets only at the first row and remains continuous through all seven loops.",
+    "data_files": [
+      "src/camera/output/DM_D/F#10/dm_D 0-1000-2000-3000-4095-3000-2000-1000 step 100.csv"
+    ],
+    "loop_peak_bits": [1000, 2000, 3000, 4095, 3000, 2000, 1000],
+    "training_points": 323,
+    "training_rmse_nm": 4.703440324124612,
+    "training_max_abs_error_nm": 17.31131832615634,
+    "training_bias_nm": 0.1625360773655777,
+    "training_loop_rmse_nm": {
+      "1_peak_1000": 2.640253949837499,
+      "2_peak_2000": 3.1923938058574346,
+      "3_peak_3000": 4.554483667825365,
+      "4_peak_4095": 5.744119122140356,
+      "5_peak_3000": 4.717075224887907,
+      "6_peak_2000": 3.924720616183704,
+      "7_peak_1000": 5.874128842249266
+    },
+    "ordered_holdout_check": {
+      "fit_loops": [1, 2, 3, 4],
+      "test_loops": [5, 6, 7],
+      "fit_rmse_nm": 4.551052636714031,
+      "fit_max_abs_error_nm": 15.00694943704795,
+      "test_rmse_nm": 5.51443765158469,
+      "test_max_abs_error_nm": 11.896606465144032,
+      "test_bias_nm": 2.177933131702745
+    },
+    "sample_interval_median_s": 7.008,
+    "observed_displacement_range_nm": [0.0, 440.0144],
+    "return_to_zero_residual_nm": [
+      8.3352,
+      7.3276,
+      13.4472,
+      16.9553,
+      14.9399,
+      9.3903,
+      9.6566
+    ],
+    "minimum_next_command_increment_nm_on_validation_grid": 0.01731013837303408,
+    "validation_status": "single_continuous_seven_loop_sequence_with_ordered_holdout_check_not_yet_hardware_closed_loop_validated",
+    "known_limitations": [
+      "The displacement range changed substantially from the 2026-06-29 calibration; this profile is specific to the 2026-07-22 F#10 optical and mechanical setup.",
+      "The output is camera-derived centre surface displacement at F#10 and must not be treated as Piezo A piston displacement or optical path difference.",
+      "The scan uses 100-bit steps and approximately 7-second sampling, so faster dynamics and smaller reversals are not identified.",
+      "All seven loops return to bit 0; arbitrary non-zero nested reversal paths remain an extrapolation.",
+      "Only one continuous acquisition file is available; the ordered holdout checks sequence transfer within that file, not day-to-day repeatability.",
+      "The linear nominal-bit command layer has passed only software/model dry-run tests. Its measured target-to-displacement linearity must be validated with a new hardware up/down scan.",
+      "After unloading from a large command, the unipolar driver cannot force the residual displacement to zero at hardware bit 0; the lowest linear targets may therefore be unreachable without clamping or closed-loop/bipolar hardware."
+    ]
+  }
+}

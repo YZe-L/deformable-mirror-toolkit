@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "device_id": "dm9_ch5_b2000",
+  "display_name": "DM9 channel 5 (both mirrors at 2000)",
+  "status": "b2000_ordinary_least_squares_fit",
+  "description": "DM9 channel 5 modified PI profile fitted from a piston-and-tilt-removed scan while both mirrors were at nominal bit 2000.",
+  "hardware": {
+    "driver": "ServoPi PCA9685",
+    "i2c_address": 64,
+    "pwm_frequency_hz": 1526,
+    "default_channel": 5,
+    "minimum_bit": 0,
+    "maximum_bit": 4095,
+    "default_settle_seconds": 7.0,
+    "channel_verified": true
+  },
+  "model": {
+    "type": "modified_prandtl_ishlinskii",
+    "input_quantity": "effective_voltage_above_driver_minimum",
+    "input_unit": "V",
+    "output_quantity": "relative_displacement",
+    "output_unit": "nm",
+    "voltage_origin_v": 1.0568499999999972,
+    "effective_input_min_v": 0.0,
+    "effective_input_max_v": 149.14314979347586,
+    "primary_response": {
+      "type": "chebyshev",
+      "domain_v": [
+        0.0,
+        149.14314979347586
+      ],
+      "chebyshev_coefficients": [
+        0.0,
+        1045.6371253789875,
+        -101.11950163782343,
+        -15.383984145971004,
+        26.598284847276368,
+        -11.176133405817232,
+        5.211173666080877,
+        -2.3804928271993875,
+        3.3509142747747402
+      ],
+      "raw_zero_nm": -1082.6556438496914,
+      "output_scale": 1.0
+    },
+    "play_operators": [
+      {
+        "threshold_v": 1.4914314979347585,
+        "weight_nm_per_v": 3.9994265095119808
+      },
+      {
+        "threshold_v": 2.457206431890142,
+        "weight_nm_per_v": 6.44240514581041e-28
+      },
+      {
+        "threshold_v": 4.048367931938638,
+        "weight_nm_per_v": 3.6092910768757997e-25
+      },
+      {
+        "threshold_v": 6.6698844263329145,
+        "weight_nm_per_v": 2.650171006581114e-20
+      },
+      {
+        "threshold_v": 10.98896123291213,
+        "weight_nm_per_v": 1.065984747305866
+      },
+      {
+        "threshold_v": 18.104851787490077,
+        "weight_nm_per_v": 1.7966862461102826
+      },
+      {
+        "threshold_v": 29.828629958695174,
+        "weight_nm_per_v": 0.8339742558874196
+      }
+    ]
+  },
+  "linearized_command": {
+    "type": "linear_nominal_bit_to_displacement",
+    "minimum_nominal_bit": 0,
+    "maximum_nominal_bit": 4095,
+    "minimum_target_displacement_nm": 0.0,
+    "maximum_target_displacement_nm": 2033.39303,
+    "definition": "A nominal bit maps linearly onto displacement; the compensator inverts the model to reach it."
+  },
+  "limits": {
+    "minimum_command_voltage_v": 1.0568499999999972,
+    "maximum_command_voltage_v": 150.19999979347585,
+    "minimum_relative_displacement_nm": 0.0,
+    "maximum_calibrated_displacement_nm": 2033.39303,
+    "reference_definition": "Displacement is zeroed when the home command applies the minimum bit."
+  },
+  "calibration": {
+    "date": "2026-08-12",
+    "method": "Degree-8 Chebyshev loading curve plus 7 non-negative play operators, fitted by least squares over the measured drive order, with an exact 2033.393030000 nm saturated-endpoint constraint.",
+    "driver_voltage_model": "shared ServoPi fit (driver_voltage_lut)",
+    "data_files": [
+      "src/camera/output/mirror_control/both move to 2000/sweep_ch5_20260811_204139.csv"
+    ],
+    "displacement_source": [
+      "displacement_nm"
+    ],
+    "displacement_reference": "Each measurement run is zeroed at its first usable row.",
+    "endpoint_constraint_nm": 2033.39303,
+    "training_points": 175,
+    "training_mae_nm": 15.355895970968382,
+    "training_rmse_nm": 19.488841504608953,
+    "training_max_abs_error_nm": 58.39359340137381,
+    "training_bias_nm": 1.7181189243514623,
+    "training_loop_rmse_nm": {
+      "sweep_ch5_20260811_204139_loop_1": 22.563589603502376,
+      "sweep_ch5_20260811_204139_loop_2": 16.90916044693223,
+      "sweep_ch5_20260811_204139_loop_3": 12.77847556669745,
+      "sweep_ch5_20260811_204139_loop_4": 20.033856348451557,
+      "sweep_ch5_20260811_204139_loop_5": 22.59338745054797
+    },
+    "observed_displacement_range_nm": [
+      0.0,
+      2033.39303
+    ],
+    "loading_response_strategy": "ordinary_least_squares",
+    "dead_zone_detection": {
+      "has_broad_dead_zone": false,
+      "quarter_drive_response_fraction": 0.2859379072137295,
+      "initial_loading_span_nm": 2033.39303
+    },
+    "endpoint_constraint_source": "Maximum of the two repeated relative displacement_nm samples recorded at hardware bit 4095.",
+    "endpoint_samples_nm": [
+      2033.39303,
+      2032.10883
+    ],
+    "endpoint_repeatability_range_nm": 1.2842000000000553,
+    "loop_peak_bits": [
+      4095,
+      3000,
+      2000,
+      1000,
+      4095
+    ],
+    "source_measurement_mode": "Mx fixed-coordinate height with piston and tilt removed (mx_plane_removed=1), while both mirrors were at nominal bit 2000.",
+    "mx_plane_removed": true,
+    "mx_point_note": "x=58.707mm y=14.333mm px=833;203",
+    "sample_interval_median_s": 7.0,
+    "sample_interval_range_s": [
+      7.0,
+      8.0
+    ],
+    "return_to_zero_residual_nm": [
+      22.87835,
+      25.70547,
+      21.09721,
+      16.69039,
+      24.80202
+    ],
+    "validation_status": "software_validated_endpoint_constrained_profile; compensated_hardware_scan_pending",
+    "known_limitations": [
+      "The fitted output is local fixed-point displacement relative to the Mx plane after piston and tilt removal, not absolute whole-mirror piston motion.",
+      "The fit uses bit and displacement_nm in acquisition order; mx_input_value is not used.",
+      "Hardware validation must use the same both-mirrors-at-2000 operating condition."
+    ]
+  }
+}

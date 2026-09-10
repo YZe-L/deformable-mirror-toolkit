@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "kind": "fringe_studio_adaptive_settling_channel",
+  "channel": 13,
+  "mirror_actuators": 9,
+  "calibration_set_id": "adaptive-20260831_174123_068489-3396466e",
+  "egate_nm": 65.42159632478632,
+  "multipliers": {
+    "small": 5.0,
+    "medium": 10.0
+  },
+  "tiers_ms": {
+    "small": 290,
+    "medium": 380,
+    "full": 580
+  },
+  "decision_rule": "all channels <=5*Egate:290ms; all <=10*Egate:380ms; otherwise:580ms; any clamp:580ms",
+  "source_profile": "src/dm_toolkit/hysteresis/devices/DM9/dm9_ch8_b2000.json",
+  "source_profile_sha256": "ee7ffd432ea83ba426b85108169f81043f5eb354fbd1c2661a123a29d51fee27",
+  "statistics": {
+    "n": 120,
+    "sign": 1,
+    "median_abs_transition_residual_nm": 6.409167280830275,
+    "empirical_p95_abs_transition_residual_nm": 75.64569632478634,
+    "p95_one_sided_95pct_lower_bound_nm": 65.42159632478632,
+    "p95_lower_bound_order_rank": 110,
+    "p95_distribution_free_95pct_ci_nm": [
+      63.811856815628744,
+      108.52784770451774
+    ],
+    "p95_ci_order_ranks": [
+      109,
+      119
+    ],
+    "egate_nm": 65.42159632478632,
+    "empirical_p95_abs_position_error_nm": 77.4992414017093,
+    "closure_abs_error_median_nm": null,
+    "closure_abs_error_max_nm": null
+  }
+}

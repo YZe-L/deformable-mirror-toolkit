@@ -1,0 +1,69 @@
+# NPZ text export
+# source: E:\master_project\Deformable_Mirror\src\camera\output\Zygo\dm_5 IM 3\unnamed_5ch_20260812_170823.npz
+# arrays: 10
+# Float precision: 17 significant digits (round-trip safe)
+
+## format_version
+shape: ()
+dtype: int64
+value:
+2
+
+## channels
+shape: (5,)
+dtype: int64
+value:
+[1, 2, 4, 6, 8]
+
+## ctrl
+shape: (5, 5)
+dtype: float64
+value:
+[[ -165.95109299420005 ,   -15.813327945464955,    10.842397865956228,   188.27959589727766 ,  3171.3412942779505  ],
+ [   34.12169236780168 ,   100.65701413950063 ,   758.5457152633619  ,  1667.2874772257535  ,  2856.7778220004743  ],
+ [   47.27649798427826 ,  -103.1478396567035  , -1140.449568980181   ,  1109.7385617300608  ,  2955.094589789251   ],
+ [   31.288613815216834,    97.99512144679008 ,  -760.6097902037848  , -1337.2595231031303  ,  4239.0471100677505  ],
+ [   43.706105913777634,   -97.2058598184781  ,  1227.090147953867   ,  -829.8387831230864  ,  3580.02675775652    ]]
+
+## singular_values
+shape: (5,)
+dtype: float64
+value:
+[0.03824037406630302, 0.027480312722341763, 0.004383812954746902, 0.003737785227466851, 0.0017796980205447184]
+
+## keep
+shape: ()
+dtype: int64
+value:
+5
+
+## grid_n
+shape: ()
+dtype: int64
+value:
+128
+
+## laser_nm
+shape: ()
+dtype: float64
+value:
+520.0
+
+## saved_utc
+shape: ()
+dtype: <U32
+value:
+'2026-08-12T16:08:23.443193+00:00'
+
+## source
+shape: ()
+dtype: <U68
+value:
+'E:/master_project/Deformable_Mirror/src/camera/output/Zygo/dm_5 IM 3'
+
+## mirror
+shape: ()
+dtype: <U1
+value:
+''
+

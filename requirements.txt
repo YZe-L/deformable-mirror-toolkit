@@ -1,0 +1,30 @@
+# PC side. Python 3.11 is recommended.
+numpy
+scipy
+opencv-python-headless
+scikit-image
+pyfftw
+h5py
+pandas
+matplotlib
+prysm
+PyQt5
+
+# Optional: search methods
+cma               # CMA-ES optimiser
+scikit-optimize   # Bayesian optimisation
+
+# Optional: speed
+bottleneck        # faster frame reductions
+torch             # GPU forward model for phase retrieval (CUDA build if available)
+
+# Optional: hardware
+hidapi            # TENMA 72-7732A multimeter over USB-HID
+psutil            # network adapter lookup for the Zygo Mx link
+pynvml            # GPU utilisation readout
+
+# Tests
+pytest
+
+# Not on PyPI: the Thorlabs camera SDK (thorlabs_tsi_sdk) ships with ThorCam.
+# See docs/HARDWARE.md.

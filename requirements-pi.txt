@@ -1,0 +1,7 @@
+# Raspberry Pi side (Python 3, I2C enabled).
+smbus2
+RPi.GPIO
+
+# The ServoPi (PCA9685) driver is not on PyPI. Install the AB Electronics
+# Python Libraries (MIT) so that `from ServoPi import PWM` works; see
+# raspberry_pi/README.md.
