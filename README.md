@@ -88,8 +88,7 @@ source, which is not included.
 
 Python follows the
 [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html):
-Google docstrings, 80 columns, `lower_with_under` names. Comments say why,
-not what.
+Google docstrings, 80 columns, `lower_with_under` names.
 
 ## Licence
 
